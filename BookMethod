@@ -1,0 +1,60 @@
+package tharini174;
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class BookMethod
+{
+	List<Book> BookList = new ArrayList<Book>();
+  public void AddBooks()
+  {  
+	  Scanner in=new Scanner(System.in);
+	  System.out.print("Enter the name of the book:");
+	  String mName=in.nextLine();
+	  System.out.print("Enter the author name:");
+	  String mAuthor=in.nextLine();
+	  boolean status=true;
+	 System.out.print("Enter the book id:");
+	 int id=in.nextInt();
+	  Book v=new Book(mName, status,id,mAuthor);
+	  BookList.add(v);
+	    System.out.print("Book Added Successfully");
+	    System.out.println();
+  }
+	  public void DisplayAll()
+	  {
+		  if(BookList.isEmpty())
+		  {
+			  System.out.println("No books in the library");
+		  }
+		  for(Book m : BookList)
+		  {
+			  System.out.println("Book : " +m.getmName()+"   "+"Author :"+m.getmAuthor()+"   "+"Id "+m.getid());
+		  }		
+	  }
+     
+	  boolean RentOut(String name) {
+		    for (Book m : BookList) {
+		        if (m.getmName().equalsIgnoreCase(name)) {
+		            if (m.isStatus()) {
+		                m.setStatus(false);
+		                return true;
+		            }
+		        }
+		    }
+		    return false; // Return false after checking all books
+		}
+
+
+	  public String CollectIn(String name) {
+		    for (Book m : BookList) {
+		        if (m.getmName().equalsIgnoreCase(name)) {
+		            m.setStatus(true);
+		            return "Book collected successfully";
+		        }
+		    }
+		    return "Requested Book not borrowed";
+		}
+
+}
+
