@@ -1,0 +1,52 @@
+package tharini174;
+public class Book 
+{
+     String mName;
+     boolean status;
+     int id;
+     String mAuthor;
+	 public Book(String mName, boolean status,int id, String mAuthor) 
+	 {
+		super();
+		this.mName = mName;
+		this.status = status;
+		this.id = id;	
+		this.mAuthor=mAuthor;
+	 }
+	public String getmName()
+	{
+		return mName;
+	}
+	public void setmName(String mName) 
+	{
+		this.mName = mName;
+	}
+	public boolean isStatus()
+	{
+		return status;
+	}
+	public void setStatus(boolean status) 
+	{
+		this.status = status;
+	}
+	public int getid() 
+	{
+		return id;
+	}
+	public int setid(int id) 
+	{
+		return this.id = id;
+	}
+	public String getmAuthor()
+	{
+		return mAuthor;
+	}
+	public void setmAuthor(String mAuthor) 
+	{
+		this.mAuthor = mAuthor;
+	}
+}
+
+
+
+
